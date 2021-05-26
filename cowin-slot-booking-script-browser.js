@@ -42,8 +42,8 @@ async function fnAlertIfSlotAvailable() {
             } catch(e) {
                 continue;
             }
-            response.centers.forEach(center => {
-                center.sessions.forEach(session => {
+            response.centers && response.centers.forEach(center => {
+                center.sessions && center.sessions.forEach(session => {
                     var doseToLookFor = sDoseLookingFor == "2" ? "available_capacity_dose2" : "available_capacity_dose1";
                     if (session[doseToLookFor] > 0 && session.min_age_limit < 45 && session.available_capacity > 0) {
                         console.log(session.available_capacity + " slots available at", center.name, center.pincode);
