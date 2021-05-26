@@ -34,7 +34,7 @@ async function fnAlertIfSlotAvailable() {
     
     for (i=0;i < aDisctrictCodes.length; i++) {
         for (j=0; j < aDates.length; j++) {
-            url = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=" + aDisctrictCodes[i]+"&date=" + aDates[j];
+            url = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=" + aDisctrictCodes[i] + "&date=" + aDates[j];
             await stayIdle(1100);
             response = request(url);
             try {
